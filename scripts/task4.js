@@ -4,6 +4,23 @@
 
 // Step 1: Declare a new variable to hold information about yourself
 
+const mySelf = {
+    name: "Evan Grizzle",
+    photo: "images/face.jpg",
+    favoriteFoods: ["Hot Wings", "Pizza", "Sub Sandwiches"],
+    hobbies: ["Reading", "Movies", "Board Games"],
+    placesLived: [
+        {
+            place: "Georgia",
+            length: "26.5 Years"
+        },
+        {
+            place: "Idaho",
+            length: "6 Months"
+        }
+    ]
+};
+
 // Step 2: Inside of the object, add a property named name with a value of your name as a string
 
 // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
