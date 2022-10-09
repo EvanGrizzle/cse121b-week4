@@ -42,15 +42,39 @@ const mySelf = {
 
 // Step 1: Assign the value of the name property (of the object declared above) to the HTML <span> element with an ID of name
 
+document.querySelector('#name').textContent = mySelf.name;
+
 // Step 2: Assign the value of the photo property as the src attribute of the HTML <img> element with an ID of photo
+
+document.querySelector('#photo').setAttribute('src', mySelf.photo);
 
 // Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
 
+document.querySelector('#photo').setAttribute('alt', mySelf.name);
+
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element
+
+//function createListItem() {
+//    document.getElementById('#favorite-foods').appendChild(document.createElement('li').appendChild(document.createTextNode(mySelf.favoriteFoods)));
+//}
+
+//mySelf.favoriteFoods.forEach(createListItem);
+
+let listItem1 = document.createElement('li');
+let listContent1 = document.createTextNode(mySelf.favoriteFoods);
+listItem1.appendChild(listContent1);
+let unorderList1 = document.getElementById('favorite-foods');
+unorderList1.appendChild(listItem1);
 
 // Step 5: Append the <li> elements created above as children of the HTML <ul> element with an ID of favorite-foods
 
 // Step 6: Repeat Step 4 for each hobby in the hobbies property
+
+let listItem2 = document.createElement('li');
+let listContent2 = document.createTextNode(mySelf.hobbies);
+listItem2.appendChild(listContent2);
+let unorderList2 = document.getElementById('hobbies');
+unorderList2.appendChild(listItem2);
 
 // Step 7: Repeat Step 5 using the HTML <ul> element with an ID of hobbies
 
@@ -59,3 +83,24 @@ const mySelf = {
 // - Create an HTML <dd> element and put its length property in the <dd> element
 
 // Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
+
+let placesLived = document.getElementById('places-lived')
+let descriptiveList1 = document.createElement('dt');
+let descriptiveContent1 = document.createTextNode(mySelf.placesLived[0].place);
+let descriptiveDetail1 = document.createElement('dd');
+let descriptiveDetailContent1 = document.createTextNode(mySelf.placesLived[0].length);
+
+descriptiveList1.appendChild(descriptiveContent1);
+descriptiveDetail1.appendChild(descriptiveDetailContent1);
+descriptiveList1.appendChild(descriptiveDetail1)
+placesLived.appendChild(descriptiveList1);
+
+let descriptiveList2 = document.createElement('dt');
+let descriptiveContent2 = document.createTextNode(mySelf.placesLived[1].place);
+let descriptiveDetail2 = document.createElement('dd');
+let descriptiveDetailContent2 = document.createTextNode(mySelf.placesLived[1].length);
+
+descriptiveList2.appendChild(descriptiveContent2);
+descriptiveDetail2.appendChild(descriptiveDetailContent2);
+descriptiveList2.appendChild(descriptiveDetail2)
+placesLived.appendChild(descriptiveList2);
